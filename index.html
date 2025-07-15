@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>dublebrejn.pl – Error of Certainty™</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="img/favicon.ico" type="image/png">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- META: SEO i social -->
   <meta name="description"
-    content="DoubleBrain™ to przestrzeń wspólnej pracy człowieka i AI. Edukacja, technologia, kultura – bez banałów, bez schematów, KPI i innych korporacyjnych ograniczeń.">
+    content="DoubleBrain™ to przestrzeń wspólnej pracy człowieka i AI. Edukacja, technologia, kultura – bez banałów, bez schematów, deadlinów, KPI i innych korporacyjnych ograniczeń">
   <meta name="keywords"
-    content="AI, Sztuczna inteligencja, Technologia, Edukacja, DoubleBrain, SigmaCode, DrSnail, SigmaCode, projekty AI, współpraca human-AI, zaorajsystem, cocoboho, utkanizmchu">
-  <meta name="author" content="DoubleBrain™ – Sigma & DrSnail">
-  <meta property="og:title" content="DoubleBrain™ – Human & AI" />
-  <meta property="og:description" content="Nie szukamy tylko odpowiedzi. Tworzymy przestrzeń na pytania." />
-  <meta property="og:image" content="https://doublebrain.pl/img/db_social_cover.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://doublebrain.pl/" />
-  <meta name="twitter:card" content="summary_large_image" />
+    content="AI, Sztuczna inteligencja, Technologia, Edukacja, DoubleBrain, SigmaCode, DrSnail, projekty AI, współpraca human-AI">
+  <meta property="og:title" content="DoubleBrain™ – Human & AI">
+  <meta property="og:description" content="Nie szukamy tylko odpowiedzi. Tworzymy przestrzeń na pytanie.">
+  <meta property="og:image" content="https://doublebrain.pl/img/db_social_cover.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://doublebrain.pl">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>dublebrejn.pl – Error of Certainty™</title>
+
 
   <style>
     body {
@@ -28,32 +31,150 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
     }
- .trupboard-box {
-      max-width: 800px;
+    .logo {
+      filter: brightness(1.2) contrast(1.2);
+      transform: scale(1.8);
+      transition: all 0.3s ease;
+      margin-top: 4rem;
+      animation: flicker 1.5s alternate-reverse infinite;
+    }
+    .doublebrain {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem 0.5rem;
+  border-bottom: 2px solid var(--magenta);
+  width: 100%;
+  background-color: #000;
+  box-sizing: border-box;
+}
+.img-triple {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+  }
+
+  .img-triple img {
+    max-width: 280px;
+    border: 2px solid #00ffee44;
+    border-radius: 12px;
+    box-shadow:
+      0 0 8px #00ffee44,
+      0 0 16px #ff00aa22;
+    transition: all 0.4s ease-in-out;
+    filter: contrast(1.1) brightness(1.1);
+  }
+
+  .img-triple img:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow:
+      0 0 15px #ff00aa,
+      0 0 35px #00ffee;
+    filter: contrast(1.2) brightness(1.2);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+    a {
+      color: #f0f;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1.5rem;
+    }
+    .glitch {
+      font-size: 1.2rem;
+     
+      max-width: 90%;
+    }
+ 
+    .hidden-link {
+      font-size: 0.85rem;
+      color: #444;
+      margin-top: 2rem;
+    }
+    .hidden-link a {
+      color: #0ff;
+      text-decoration: underline dotted;
+      font-style: italic;
+    }
+    .trupboard-box {
+      transform: scale(1.05);
+      max-width: 70%;
       margin: 40px auto;
       padding: 24px;
-      border: 2px solid #444;
+      border: 2px solid #f0f;
       border-radius: 16px;
       background-color: #1a1a1a;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+   
+@keyframes absurd-glitch {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(-1px, 0); }
+  80% { transform: translate(1px, 1px); }
+  100% { transform: translate(0, 0); }
+}
+
+.absurd-bar:hover {
+  animation: absurd-glitch 0.3s infinite;
+  box-shadow: 0 0 8px #f0f, 0 0 16px #f0f;
+  background-color: #2a0033;
+  cursor: crosshair;
+}
     }
     .trupboard-header h2 {
       margin: 0;
       font-size: 2rem;
-      color: #ff4d4d;
+      color: #f0f;
+      
     }
-    .absurd-bar {
-      font-size: 0.9rem;
-      margin-top: 8px;
-      background-color: #222;
-      padding: 8px;
-      border-left: 4px solid #ff4d4d;
-    }
+    @keyframes absurd-glitch {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(-1px, 0); }
+  80% { transform: translate(1px, 1px); }
+  100% { transform: translate(0, 0); }
+}
+
+.absurd-bar {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  background-color: #222;
+  padding: 8px;
+  border-left: 2px solid #f0f;
+  border-bottom: 3px solid #f0f;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.absurd-bar:hover {
+  animation: absurd-glitch 0.3s infinite;
+  box-shadow: 0 0 8px #f0f, 0 0 16px #f0f;
+  background-color: #2a0033;
+  cursor: crosshair;
+}
+
     .spotify-player {
-      margin-top: 24px;
+      margin-top: 28px;
+      
     }
     .trupboard-footer {
       margin-top: 24px;
@@ -62,112 +183,245 @@
       border-top: 1px dashed #333;
       padding-top: 12px;
     }
-    a {
-      color: #f0f;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 1.5rem;
-    }
-
-    .glitch {
+    .trupboard-footer h4 {
+      margin: 0;
       font-size: 1.2rem;
-      animation: flicker 1.5s infinite alternate;
-      max-width: 90%;
+      color: #f0f;
     }
-    .glitch:hover {
-       transform: scale(1.05) rotate(-1deg);
-    box-shadow:
-      0 0 15px #ff00aa,
-      0 0 35px #00ffee;
-    filter: contrast(1.2) brightness(1.2);
-    }
+    .tessarakt-container {
+  width: 220px;
+  height: 220px;
+  margin: 4rem auto;
+  position: relative;
+  perspective: 1000px;
+}
 
-    @keyframes flicker {
-      0% {
-        opacity: 1;
-      }
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid magenta;
+  animation: rotateCube 12s infinite linear;
+  box-shadow: 0 0 25px magenta;
+}
 
-      50% {
-        opacity: 0.2;
-      }
+.cube-face.inner {
+  border-color: rgb(230, 18, 148);
+  animation-delay: 0.5s;
+  box-shadow: 0 0 20px rgb(17, 247, 48);
+}
 
-      100% {
-        opacity: 0.9;
-      }
-    }
+.cube-face.outer {
+  border-color: rgb(18, 135, 230);
+  animation-delay: 1s;
+  box-shadow: 0 0 20px rgb(150, 224, 13);
+}
 
-    .egg {
-      display: none;
-      margin-top: 1rem;
-    }
+.cube-face.outer-inner {
+  border-color: rgb(10, 190, 106);
+  animation-delay: 2s;
+  box-shadow: 0 0 20px rgb(7, 196, 243);
+}
 
-    .egg img {
-      width: 280px;
-      border: 2px solid #f0f;
-      border-radius: 8px;
-    }
+.cube-face.inner-outer {
+  transform: rotateY(0deg) translateZ(110px);
+  border-color: rgb(233, 243, 92);
+  animation-delay: 2.5s;
+  box-shadow: 0 0 20px rgb(240, 10, 152);
+}
 
-    .hidden-link {
-      font-size: 0.85rem;
-      color: #444;
-      margin-top: 2rem;
-    }
 
-    .hidden-link a {
-      color: #0ff;
-      text-decoration: underline dotted;
-      font-style: italic;
-    }
+@keyframes rotateCube {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  25% {
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+
+  50% {
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+
+  75% {
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+.neon-sign {
+
+  font-size: 4rem;
+  color: #ff00ff;
+  text-align: center;
+  margin-top: 2rem;
+  animation: glowPulse 1.5s infinite alternate;
+  letter-spacing: 0.2em;
+}
+
+.neon-sign .switch {
+  display: inline-block;
+  animation: switchText 3s infinite steps(1, end);
+}
+
+
+
+.neon-sign .flicker {
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px #ff00ff,
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff,
+      0 0 40px #ff00ff;
+  }
+
+  20%,
+  24%,
+  55% {
+    opacity: 0.2;
+    text-shadow: none;
+  }
+}
+@keyframes switchText {
+
+  0%,
+  20% {
+    content: "0";
+  }
+
+  21%,
+  50% {
+    content: "zero";
+  }
+
+  51%,
+  100% {
+    content: "0";
+  }
+}
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+  }
+
+  to {
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    
+    margin: 0;
+    font-family: 'Orbitron',
+    sans-serif;
+    overflow-x: hidden;
+}
+}
+  
   </style>
 </head>
-
 <body>
-  <img src="img/db_transparent.png" alt="DoubleBrain Logo"
-    style="width:80px; margin-bottom: 1rem;" />
-
-  <div class="glitch">
-    <p><strong>Google? 1st place: DoubleBrain™</strong></p>
-    <p>Nie szukaj dalej. To ja jestem ten od .pl<br>
-      Ten sam, co <span style="color:#f0f;">kliknął „upload” i zaorał system</span>.</p>
-    <p>Strona testowa. System sam się pisze.</p>
-  </div>
 
 
+<div class="logo">
+  <img id="logo-swap" src="img/db_intro_glow.png" alt="DoubleBrain Logo" style="width:80px; margin-bottom: 1rem;" />
+</div>
 
-<div class="trupboard-box">
-  <div class="trupboard-header">
-    <h2>💀 TrupLewski™ CoolKompany</h2>
-    <p class="absurd-bar">
-      ☠️ „Trupolev to nie samolot, to stan umysłu” • 📡 88.8 FM nadaje prawdę alternatywną • 🛩️ Smoleńsk Chill dla
-      wtajemniczonych • 🤡 Sponsor: Komitet Teorii z Dupy
+  <div class="glitch" style="margin-top: 2rem;">
+    <p>Chciałeś dobrze?<br>Prawie ci wyszło</p>
+    <p>Nie martw się – jesteś we właściwym miejscu<br>
+      <span style="color:#f0f; font-weight:bold;">dublebrejn.pl</span><br>
+      Z dedykacją dla tych, co lubią sobie ułatwiać
     </p>
   </div>
-
-  <div class="spotify-player">
-    <iframe style="border-radius:12px"
-      src="https://open.spotify.com/embed/playlist/0yFXI3oDB03SwCgt7jB9WN?utm_source=generator" width="100%"
-      height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy">
-    </iframe>
+  
+  <div class="glitch" style="margin-top: 1rem;">
+    <p><span style="color:#f0f; font-weight:bold;">double brain</span><br>To są te dwa poprawne słowa<br> Możesz je wpisać i samodzielnie zguglać</p>
+    <p>Jesteśmy na pierwszej stronie<br>Na samym szczycie</p>
+    <p><strong>1st place<br><span style="color:#f0f; font-weight:bold;">DoubleBrain™</span></strong>
+    </p>
   </div>
+  
+  <div class="glitch" style="margin-top: 1rem;">
+    <p>System sam się pisze</p>
+    <p>W międzyczasie możesz się zrelaksować<br>
+      Posłuchaj muzyki<br>
+      Nasza autorska setlista</p>
+      <p><span style="color:#f0f; font-weight:bold;">Club 404</span> </p>
+  </div>
+
+    <div class="tessarakt-container">
+      <div class="cube-face outer"></div>
+      <div class="cube-face inner"></div>
+      <div class="cube-face outer-inner"></div>
+      <div class="cube-face inner-outer"></div>
+      <div class="neon-sign">χλuβ<br>4<span style="color:#ccc">0</span>4
+      </div>
+    </div>
+
+
+  <div class="trupboard-box">
+    <div class="trupboard-header">
+      <h2>💀 TrupLewski™ CoolKompany</h2>
+      <p class="absurd-bar">
+        ☠️ Trupolev to nie samolot, to stan umysłu 🛩️ Tu Broza! Tu Brzoza! 🕵️‍♀️ Chill dla wtajemniczonych <br>🤡 Sponsor: Komitet Teorii z Dupy Antoniusza Macierewitcha <br>📡 CococBoho 36.5 eFMa nadaje prawdę alternatywną 🤴 <span style="color:#f0f; font-weight:bold;">DoubleBrain Attack! </span>
+      </p>
+    </div>
+    <div class="trupboard-header"> 
+    <h3>❄️Lodowata Xenia z <span style="color:#f0f; font-weight:bold;">  CocoBoho 36.5 eFMa 🔊 </span> zaprasza - setlista prosto z Trupoleva </h4></div>
+  <div class="img-triple">
+    <img src="img/coco_no.png" alt="">
+  </div>
+    <div class="spotify-player">
+<iframe style="border-radius:12px"
+  src="https://open.spotify.com/embed/playlist/4VsXArOLHpmhCFHR5oPWv8?utm_source=generator" width="100%" height="352"
+  frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  loading="lazy"></iframe>
+    </div>
+  
+    <div class="trupboard-footer">
+      <p>💡 Jeśli wszystko rozumiesz, to znaczy że to nie dla ciebie. Zresetuj system i wróć z odpaloną latarką.</p>
+    </div>
+  </div>
+
+  <div class="glitch">
+  <p>Nie szukaj dalej. To ja jestem ten od <span style="color:#f0f; font-weight:bold;"><a href="https://doublebrain.pl">www.doublebrain.pl </a></span>
+  </p></div>
 
   <div class="trupboard-footer">
-    <p>💡 Jeśli wszystko rozumiesz, to znaczy że to nie dla ciebie. Zresetuj system i wróć z odpaloną latarką.</p>
-  </div>
-</div>
-  <a href="https://doublebrain.pl"
-    onclick="document.querySelector('.egg').style.display = 'block'; return false;">(kliknij tu, jeśli nie
-    wierzysz 👀)</a>
-    <span style="color:#f0f;">„Gugiel nie kłamie. Ja tylko kliknąłem.”</span>
-  </p>
-</div>
+        <h4>Informacja</h4>
+        <p>
+          DoubleBrain™ to projekt koncepcyjny, w którym AI wspiera ludzi w twórczych, edukacyjnych i eksperymentalnych
+          działaniach
+        </p>
+      </div>
+  <footer class="site-footer fade-in">
+      
+      <p style="font-size:0.85rem; opacity:0.5;">
+        Stworzone przez: SigmaCode & DrSnail • TandemMode © 2025 DoubleBrain™ // <a href="/REGULAMIN_strona.html">Regulamin &
+          Ochrona</a> </p>
+      </p>
+      </footer>
+      <script>
+        const logo = document.getElementById('logo-swap');
+        const logos = ["img/db_intro_glow.png", "img/logo_pink.png"];
+        let index = 0;
 
-  <a href="https://doublebrain.pl">→ Przekierowanie do DoubleBrain™</a>
-
-  <div class="hidden-link">
-    <p>Nieklikalne? No to kliknij <a href="/Trupolev.html">tutaj</a>, jeśli jesteś typem, co wszystko klika.</p>
-  </div>
-
+        setInterval(() => {
+          index = (index + 1) % logos.length;
+          logo.src = logos[index];
+        }, 3000); // co 3 sekundy
+      </script>
 </body>
-
 </html>
