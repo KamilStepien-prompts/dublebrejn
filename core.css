@@ -1,0 +1,697 @@
+/* === Trade & Travel – core styles === */
+
+:root {
+  --magenta: #ff00aa;
+  --cyan: #00ffff;
+  --black: #000000;
+  --white: #ffffff;
+  --highlight: #ff77ee;
+  --danger: #ff0033;
+  --herosi: #ffdd00;
+}
+/* Domyślnie */
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Brand i tytuły */
+.brand-text,
+h1,
+h2.slogan-text {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Misje, logi, terminalowe teksty */
+.scene,
+.mission-block {
+  font-family: "Share Tech Mono", monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--black);
+  color: var(--cyan);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.sociale {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.setlist-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+}
+
+.setlist-card {
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 20px;
+  box-shadow: 0 0 12px var(--magenta);
+  text-align: center;
+  padding: 1rem;
+  width: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* === DJ HEADER STYLING === */
+.dj-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+  box-shadow: 0 0 20px var(--magenta);
+}
+
+.dj-eq-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 1.2rem;
+  height: 40px;
+}
+
+.eq-bar {
+  width: 6px;
+  background: var(--cyan);
+  animation: pulse 1.2s infinite ease-in-out;
+  border-radius: 3px;
+}
+
+.bar1 {
+  animation-delay: 0s;
+}
+
+.bar2 {
+  animation-delay: 0.2s;
+}
+
+.bar3 {
+  animation-delay: 0.4s;
+}
+
+.bar4 {
+  animation-delay: 0.2s;
+}
+
+.bar5 {
+  animation-delay: 0s;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    height: 10px;
+    opacity: 0.3;
+  }
+
+  50% {
+    height: 40px;
+    opacity: 1;
+  }
+}
+
+.logo-card {
+  text-align: center;
+}
+
+.logo-card img.logo-pulse {
+  width: 90px;
+  height: auto;
+  filter: drop-shadow(0 0 2px var(--magenta));
+  animation: pulseLogo 1.5s infinite alternate ease-in-out;
+  margin-bottom: 1rem;
+}
+
+@keyframes pulseLogo {
+  from {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  to {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+.neon-glow {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--cyan);
+  text-shadow: 0 0 8px var(--cyan), 0 0 14px var(--magenta);
+  letter-spacing: 0.1em;
+  animation: flicker 3s infinite ease-in-out;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  55% {
+    opacity: 1;
+  }
+}
+
+.slogan-text {
+  font-size: 1rem;
+  color: var(--magenta);
+  text-shadow: 0 0 4px var(--magenta);
+}
+
+.brand-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--cyan);
+  text-shadow: 0 0 5px var(--cyan), 0 0 12px var(--magenta);
+  letter-spacing: 0.1em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+  text-shadow: 0 0 6px var(--cyan);
+  animation: fadeIn 1.2s ease-in-out 0.2s forwards;
+  opacity: 0;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--highlight);
+  text-shadow: 0 0 6px var(--magenta);
+  animation: fadeIn 1.4s ease-in-out 0.5s forwards;
+  opacity: 0;
+}
+
+a {
+  color: var(--white);
+  text-shadow: 0 0 6px var(--magenta);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cyan);
+}
+
+.btn-enter,
+.btn-escape {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  border: 2px solid var(--cyan);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--cyan);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  min-width: 220px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-enter:hover {
+  background-color: var(--cyan);
+  color: var(--black);
+}
+
+.btn-escape {
+  border-color: var(--magenta);
+  color: var(--magenta);
+}
+
+.btn-escape:hover {
+  background-color: var(--magenta);
+  color: var(--black);
+}
+.link-glow {
+  color: var(--cyan);
+  font-weight: bold;
+  text-shadow: 0 0 8px var(--cyan), 0 0 12px var(--magenta);
+  transition: color 0.3s ease;
+}
+
+.link-glow:hover {
+  color: var(--magenta);
+  text-shadow: 0 0 10px var(--magenta), 0 0 18px var(--cyan);
+}
+.scene {
+  max-width: 960px;
+  margin: 2rem auto;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 34px rgba(255, 0, 200, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.glitch-cube {
+  transform-style: preserve-3d;
+  position: relative;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 0.5rem;
+  perspective: 600px;
+}
+
+.glitch-cube span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  transition: transform 0.7s ease, opacity 0.4s ease;
+  text-shadow: 0 0 3px var(--magenta);
+  top: 0;
+  left: 0;
+}
+
+.glitch-cube .front {
+  transform: rotateY(0deg);
+  color: var(--magenta);
+  z-index: 2;
+}
+
+.glitch-cube .back {
+  transform: rotateY(180deg);
+  color: var(--cyan);
+  opacity: 0;
+}
+
+.glitch-cube.flipping .front {
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+.glitch-cube.flipping .back {
+  transform: rotateY(360deg);
+  opacity: 1;
+}
+/* === NAWIGACJA === */
+
+.main-nav {
+  position: relative;
+  background: var(--black);
+  box-shadow: 0 4px 12px -1px var(--magenta);
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+
+/* === SEKCJA DESKTOP === */
+/* Pokaż menu poziome na większych ekranach */
+/* 1. Ukrycie hamburgera na desktop */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none !important;
+  }
+  .main-nav {
+    justify-content: flex-start; /* hamburger po lewej */
+  }
+  .nav-menu {
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    max-height: none;
+    opacity: 1;
+    display: flex !important;
+    gap: 0.8rem;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .nav-menu li {
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-menu li a {
+    font-size: 1.3rem;
+    color: #ff00ff;
+    text-decoration: none;
+    position: relative;
+    text-shadow: none;
+    border-bottom: none;
+  }
+
+  /* 2. Usuwamy efekt podkreślenia */
+
+  .nav-menu li a::after,
+  .nav-menu li a:hover::after {
+    display: none;
+  }
+}
+.nav-menu {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  background: transparent;
+}
+
+/* Stylizacja dla mobile nav-menu otwartego */
+
+@media (max-width: 767px) {
+  .main-nav {
+    position: sticky;
+    top: 0;
+    background: #000;
+    z-index: 999;
+    padding: 0.5rem 1rem;
+    height: 60px;
+    /* ← dodaj jeśli chcesz dokładnie określić wysokość */
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    /* ← dokładnie tyle co nav height (lub height + padding) */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(17, 17, 17, 0.85);
+    backdrop-filter: blur(10px);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    display: flex;
+    z-index: 998;
+  }
+
+  .nav-menu.show {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+/* Linki w menu mobilnym */
+.nav-menu li {
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 0, 255, 0.2);
+  /* subtelny neon border */
+}
+
+.nav-menu li:last-child {
+  border-bottom: none;
+  /* nie chcemy kreski pod ostatnim */
+}
+
+.nav-menu li a {
+  color: #ff00ff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+/* Glitchy podkreślenie przy najechaniu */
+.nav-menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #00ffff;
+  transition: width 0.4s ease;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+/* Opcjonalnie: glow efekt przy hover */
+.nav-menu li a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.nav-toggle span {
+  width: 30px;
+  height: 3px;
+  background-color: #ff00ff;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+/* Animacja hamburgera w stylu X + puls */
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(9px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px);
+}
+
+/* === TRADE.HTML === */
+
+.m7-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  padding: 2rem;
+}
+
+.trade-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #fff2;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #eee;
+  transition: all 0.2s ease-in-out;
+}
+
+.trade-box:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.03);
+}
+
+.trade-box span {
+  display: block;
+  font-weight: normal;
+  font-size: 0.85rem;
+  color: #bbb;
+  margin-top: 0.5rem;
+}
+
+.link-box {
+  cursor: pointer;
+  text-decoration: none;
+  color: #0ff;
+  border-color: #0ff;
+}
+
+.setup-placeholder {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--highlight);
+  background: rgba(255, 0, 170, 0.08);
+  padding: 0.6rem;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(255, 0, 170, 0.3);
+  font-family: "Share Tech Mono", monospace;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* === DISCLAIMER - DEKLARACJA DUPOCHRONU === */
+.info {
+  font-size: 1rem; /* lub 12px */
+  line-height: 1.4;
+  color: var(--magenta);
+  margin-top: 1rem;
+  max-width: 80ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.disclaimer {
+  font-size: 0.75rem; /* lub 12px */
+  line-height: 1.2;
+  color: #bbb;
+  margin-top: 1rem;
+  max-width: 80ch;
+  margin-inline: auto;
+  text-align: justify;
+}
+
+/* === HEROSI === */
+
+.heroes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  margin-inline: auto;
+  max-width: 1000px;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #fff2;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px var(--magenta);
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.hero-card:hover {
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-tag {
+  font-family: "Share Tech Mono", monospace;
+  color: var(--highlight);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.setup-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  color: var(--cyan);
+  font-size: 0.95rem;
+}
+
+.setup-list li {
+  margin: 0.3rem 0;
+}
+
+.motto {
+  font-style: italic;
+  color: var(--magenta);
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  text-shadow: 0 0 5px var(--magenta);
+}
+
+/*=== BANER Z GRAFIKAMI */
+
+.hero-banner {
+  position: relative;
+  max-width: 960px;
+  margin: 2rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.2);
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
+  filter: brightness(0.95) contrast(1.05);
+  border-radius: 10px;
+}
+
+.protocol-text {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2rem;
+  color: #00ffcc;
+  font-family: "Share Tech Mono", monospace;
+  text-shadow: 0 0 8px #00ffaa, 0 0 14px #003333;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+}
+
+.protocol-text h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.protocol-text p {
+  margin: 0.3rem 0 0 0;
+  font-size: 1rem;
+  color: #00ffaa;
+}
+
+@media (max-width: 767px) {
+  .heroes-grid {
+    grid-template-columns: 1fr !important;
+    padding-inline: 1rem;
+  }
+}
